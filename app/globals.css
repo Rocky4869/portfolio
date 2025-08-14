@@ -70,11 +70,11 @@
     rgb(68, 145, 184),
     rgb(21, 49, 151)
   );
-  background-repeat: no-repeat;
-  background-size: 80%;
-  animation: shinetxt 5s infinite;
-  animation-delay: 1.5s;
-  background-position: -500%;
+  /* background-repeat: no-repeat; */
+  /* background-size: 100%;  */
+  /* animation: shinetxt 5s infinite; */
+  /* animation-delay: 1.5s; */
+  /* background-position: -500%; */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);

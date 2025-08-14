@@ -1,11 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronDown, Send } from "lucide-react";
 import myphoto from "@/public/images/myphoto1.jpg";
 
 export default function Hero() {
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [currentTitle, setCurrentTitle] = useState("");
+
   const scrollToAbout = () => {
     const element = document.querySelector("#about");
     if (element) {
@@ -19,6 +22,50 @@ export default function Hero() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const titles = [
+    "Software Engineer",
+    "Web Developer",
+    "Full Stack Developer",
+    "Data Analyst",
+  ];
+
+  // Animation effect for the title
+  useEffect(() => {
+    const startTyping = () => {
+      setCurrentTitle("");
+
+      const typeWriter = (text: string, index: number) => {
+        if (index < text.length) {
+          setCurrentTitle(text.slice(0, index + 1));
+          setTimeout(() => typeWriter(text, index + 1), 10);
+        } else {
+          setTimeout(() => {
+            startDeleting(text);
+          }, 1000);
+        }
+      };
+
+      typeWriter(titles[currentTitleIndex], 0);
+    };
+
+    const startDeleting = (text: string) => {
+      const deleteWriter = (index: number) => {
+        if (index > 0) {
+          setCurrentTitle(text.slice(0, index - 1));
+          setTimeout(() => deleteWriter(index - 1), 20);
+        } else {
+          setTimeout(() => {
+            setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+          }, 500);
+        }
+      };
+
+      deleteWriter(text.length);
+    };
+
+    startTyping();
+  }, [currentTitleIndex]);
 
   return (
     <section
@@ -36,15 +83,15 @@ export default function Hero() {
                   Rocky
                 </span>
               </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold home__subtitle">
-                Software Engineer
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold min-h-[1.2em] home__subtitle">
+                {currentTitle}
               </h2>
             </div>
 
-            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed max-w-2xl mx-auto xl:mx-0">
+            {/* <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed max-w-2xl mx-auto xl:mx-0">
               I am a 22-year-old from Hong Kong who just graduated from CUHK
               with a degree in Computer Science.
-            </p>
+            </p> */}
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center xl:justify-start">
               <button
@@ -59,7 +106,7 @@ export default function Hero() {
                 onClick={scrollToAbout}
                 className="group border-2 border-gray-300 hover:border-purple-600 text-gray-700 hover:text-purple-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:bg-purple-50 flex items-center justify-center gap-3"
               >
-                Learn More
+                About Me
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-1 transition-transform duration-200" />
               </button>
             </div>
