@@ -1,83 +1,117 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { X, Menu } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import snoppy from "@/public/images/snoppy.png";
 
 const navItems = [
-  { href: "#home", label: "Home", icon: "🏠" },
-  { href: "#about", label: "About", icon: "👤" },
-  { href: "#skills", label: "Skills", icon: "💻" },
-  { href: "#experiences", label: "Experiences", icon: "🎯" },
-  { href: "#portfolio", label: "Portfolio", icon: "📁" },
-  { href: "#contact", label: "Contact", icon: "📧" },
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experiences", label: "Experiences" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+    router.push(href);
+  };
 
   return (
-    <>
-      {/* Mobile Navigation - Bottom Fixed */}
-      <header className="md:hidden fixed bottom-0 left-0 w-full z-[100] bg-white dark:bg-neutral-900">
-        <nav className="h-12 flex justify-between items-center px-6">
-          <Link
-            href="#home"
-            className="text-lg font-medium text-neutral-800 dark:text-white hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
-          >
-            Rocky
-          </Link>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 lg:h-20">
+          {/* Logo/Brand */}
+          <div className="flex items-center gap-2">
+            <Image
+              src={snoppy}
+              alt="Snoppy"
+              width={50}
+              height={50}
+              className="rounded-full nav__img mr-2"
+            />
+            <Link
+              href="#home"
+              className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+              onClick={() => scrollToSection("#home")}
+            >
+              Rocky
+            </Link>
+          </div>
 
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => scrollToSection(item.href)}
+                className="text-gray-700 hover:text-[#9c57e0] font-medium transition-colors duration-200 relative group"
+              >
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#9c57e0] transition-all duration-300 group-hover:w-full"></span>
+              </button>
+            ))}
+          </nav>
+
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-lg text-neutral-800 dark:text-white hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
+            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-[#9c57e0] hover:bg-gray-100 transition-colors duration-200"
+            aria-label="Toggle mobile menu"
           >
-            {isOpen ? "✕" : "☰"}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
-        </nav>
+        </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="fixed bottom-0 left-0 w-full bg-white dark:bg-neutral-900 p-8 pb-20 rounded-t-6xl shadow-lg border-t-4 border-purple-500">
-            <div className="grid grid-cols-3 gap-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="flex flex-col items-center text-sm font-medium text-neutral-800 dark:text-white hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <span className="text-2xl mb-1">{item.icon}</span>
-                  <span className="text-xs">{item.label}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-      </header>
-
-      {/* Desktop Navigation - Top Fixed */}
-      <header className="hidden md:block fixed top-0 left-0 w-full z-[100] bg-white dark:bg-neutral-900">
-        <nav className="max-w-6xl mx-auto h-16 flex justify-between items-center px-4">
-          <Link
-            href="#home"
-            className="text-xl font-medium text-neutral-800 dark:text-white hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
-          >
-            Rocky
-          </Link>
-
-          <ul className="flex gap-8">
+        {/* Mobile Navigation */}
+        <div
+          className={`lg:hidden transition-all duration-300 ease-in-out ${
+            isOpen
+              ? "max-h-96 opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
+          <nav className="pb-4 space-y-2">
             {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-sm font-medium text-neutral-800 dark:text-white hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
-                >
-                  {item.label}
-                </Link>
-              </li>
+              <button
+                key={item.href}
+                onClick={() => scrollToSection(item.href)}
+                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#9c57e0] hover:bg-gray-50 rounded-lg font-medium transition-colors duration-200"
+              >
+                {item.label}
+              </button>
             ))}
-          </ul>
-        </nav>
-      </header>
-    </>
+          </nav>
+        </div>
+      </div>
+    </header>
   );
 }
