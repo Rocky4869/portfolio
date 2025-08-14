@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -11,7 +10,6 @@ import About from "@/components/About";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Header />
       <SideBar />
       <Hero />
       <About />

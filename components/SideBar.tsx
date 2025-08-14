@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import { socialLinks } from "@/constants";
@@ -14,7 +13,7 @@ export default function SideBar() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-white"
+            className="group p-3 bg-black/20 backdrop-blur-md rounded-full shadow-2xl border border-purple-500/30 transition-all duration-500 hover:scale-110 hover:shadow-purple-500/25 hover:bg-gradient-to-br hover:from-gray-900/40 hover:to-gray-900/40 hover:border-purple-400/60 cursor-pointer"
             aria-label={`Visit ${social.name}`}
             title={social.name}
           >
@@ -23,7 +22,7 @@ export default function SideBar() {
               alt={social.name}
               width={20}
               height={20}
-              className="w-5 h-5 transition-all duration-200"
+              className="w-5 h-5 transition-all duration-300 filter brightness-0 invert cursor-pointer"
             />
           </a>
         ))}

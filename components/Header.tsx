@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { X, Menu } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
-import snoppy from "@/public/images/snoppy.png";
+import { images } from "@/constants";
+import scrollToSection from "@/lib/utils";
 
 const navItems = [
   { href: "#home", label: "Home" },
@@ -18,25 +18,15 @@ const navItems = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsOpen(false);
-    router.push(href);
-  };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300  backdrop-blur-lg shadow-lg border-b border-gray-800 bg-gray-800/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo/Brand */}
           <div className="flex items-center gap-2">
             <Image
-              src={snoppy}
+              src={images.snoppy}
               alt="Snoppy"
               width={50}
               height={50}
@@ -45,7 +35,9 @@ export default function Header() {
             <Link
               href="#home"
               className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-              onClick={() => scrollToSection("#home")}
+              onClick={() => {
+                scrollToSection("#home");
+              }}
             >
               Rocky
             </Link>
@@ -56,8 +48,11 @@ export default function Header() {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-[#9c57e0] font-medium transition-colors duration-200 relative group"
+                onClick={() => {
+                  scrollToSection(item.href);
+                  setIsOpen(false);
+                }}
+                className="text-gray-200 hover:text-[#9c57e0] font-medium transition-colors duration-200 relative group cursor-pointer"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#9c57e0] transition-all duration-300 group-hover:w-full"></span>
@@ -68,7 +63,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-gray-700  hover:text-[#9c57e0] hover:bg-gray-100 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-md text-gray-200  hover:text-[#9c57e0] transition-colors duration-200"
             aria-label="Toggle mobile menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -87,8 +82,11 @@ export default function Header() {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#9c57e0] hover:bg-gray-50 rounded-lg font-medium transition-colors duration-200"
+                onClick={() => {
+                  scrollToSection(item.href);
+                  setIsOpen(false);
+                }}
+                className="mt-4 block w-full text-left px-4 py-3 text-gray-200 hover:text-[#9c57e0] rounded-lg font-medium transition-colors duration-200 hover:bg-gray-50 "
               >
                 {item.label}
               </button>

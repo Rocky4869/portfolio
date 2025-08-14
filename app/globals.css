@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b5cf6, #3b82f6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #2563eb);
+}
+
 @keyframes wave {
   0% {
     transform: rotate(0deg);
@@ -70,12 +93,9 @@
     rgb(68, 145, 184),
     rgb(21, 49, 151)
   );
-  /* background-repeat: no-repeat; */
-  /* background-size: 100%;  */
-  /* animation: shinetxt 5s infinite; */
-  /* animation-delay: 1.5s; */
-  /* background-position: -500%; */
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  width: fit-content;
 }
