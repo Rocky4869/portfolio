@@ -22,12 +22,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white pt-20"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white pt-20 pb-12"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-20 lg:pl-20 xl:pl-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-20">
         <div className="grid xl:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-6 lg:space-y-8 text-center xl:text-left xl:pr-4 2xl:pr-8">
+          <div className="space-y-6 lg:space-y-8 text-center xl:text-left xl:pr-4 xl:pl-20 2xl:pr-8">
             <div className="space-y-3 lg:space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
                 Hi, I&apos;m{" "}
@@ -94,21 +94,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <button
-          onClick={scrollToAbout}
-          className="flex flex-col items-center gap-2 text-gray-600 hover:text-purple-600 transition-colors duration-200 group"
-        >
-          <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-current rounded-full mt-2 animate-pulse"></div>
-          </div>
-          <span className="text-sm font-medium group-hover:translate-y-1 transition-transform duration-200">
-            Scroll down
-          </span>
-        </button>
       </div>
     </section>
   );

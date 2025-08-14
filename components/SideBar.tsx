@@ -15,37 +15,37 @@ export default function SideBar() {
       name: "LinkedIn",
       icon: Linkedin,
       href: "https://www.linkedin.com/in/rocky-lok-ki-tam/",
-      color: "hover:text-blue-600",
+      color: "hover:text-[#0077b5]",
     },
     {
       name: "GitHub",
       icon: Github,
       href: "https://github.com/rocky4869",
-      color: "hover:text-gray-800",
+      color: "hover:text-[#181717]",
     },
     {
       name: "Instagram",
       icon: Instagram,
       href: "https://www.instagram.com/loki_1009/",
-      color: "hover:text-pink-600",
+      color: "hover:text-[#e1306c]",
     },
     {
       name: "Facebook",
       icon: Facebook,
       href: "https://www.facebook.com/profile.php?id=100007671552746",
-      color: "hover:text-blue-600",
+      color: "hover:text-[#1877f2]",
     },
     {
       name: "Twitter",
       icon: Twitter,
       href: "https://twitter.com/TamKi13059439",
-      color: "hover:text-black",
+      color: "hover:text-[#1d9bf0]",
     },
     {
       name: "YouTube",
       icon: Youtube,
       href: "https://www.youtube.com/channel/UCxq4ZUStvhnKmQHPOyXGZEw",
-      color: "hover:text-red-600",
+      color: "hover:text-[#ff0000]",
     },
   ];
 
