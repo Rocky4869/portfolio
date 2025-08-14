@@ -1,51 +1,45 @@
 "use client";
+
 import React from "react";
-import {
-  Linkedin,
-  Github,
-  Instagram,
-  Facebook,
-  Youtube,
-  Twitter,
-} from "lucide-react";
+import Image from "next/image";
+import linkedin from "@/public/icons/linkedin.png";
+import github from "@/public/icons/github.png";
+import instagram from "@/public/icons/instagram.png";
+import facebook from "@/public/icons/facebook.png";
+import X from "@/public/icons/X.png";
+import youtube from "@/public/icons/youtube.png";
 
 export default function SideBar() {
   const socialLinks = [
     {
       name: "LinkedIn",
-      icon: Linkedin,
+      src: linkedin,
       href: "https://www.linkedin.com/in/rocky-lok-ki-tam/",
-      color: "hover:text-[#0077b5]",
     },
     {
       name: "GitHub",
-      icon: Github,
+      src: github,
       href: "https://github.com/rocky4869",
-      color: "hover:text-[#181717]",
     },
     {
       name: "Instagram",
-      icon: Instagram,
+      src: instagram,
       href: "https://www.instagram.com/loki_1009/",
-      color: "hover:text-[#e1306c]",
     },
     {
       name: "Facebook",
-      icon: Facebook,
+      src: facebook,
       href: "https://www.facebook.com/profile.php?id=100007671552746",
-      color: "hover:text-[#1877f2]",
     },
     {
-      name: "Twitter",
-      icon: Twitter,
-      href: "https://twitter.com/TamKi13059439",
-      color: "hover:text-[#1d9bf0]",
+      name: "X",
+      src: X,
+      href: "https://x.com/TamKi13059439",
     },
     {
       name: "YouTube",
-      icon: Youtube,
+      src: youtube,
       href: "https://www.youtube.com/channel/UCxq4ZUStvhnKmQHPOyXGZEw",
-      color: "hover:text-[#ff0000]",
     },
   ];
 
@@ -58,11 +52,17 @@ export default function SideBar() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 transition-all duration-300 ${social.color} hover:scale-110 hover:shadow-xl hover:bg-white`}
+            className="group p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-white"
             aria-label={`Visit ${social.name}`}
             title={social.name}
           >
-            <social.icon className="w-5 h-5 text-gray-600 group-hover:text-current transition-all duration-200" />
+            <Image
+              src={social.src}
+              alt={social.name}
+              width={20}
+              height={20}
+              className="w-5 h-5 transition-all duration-200"
+            />
           </a>
         ))}
       </div>
