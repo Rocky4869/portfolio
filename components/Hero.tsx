@@ -130,14 +130,14 @@ export default function Hero() {
                 />
 
                 {/* Floating stats card */}
-                <div className="absolute -bottom-6 -right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200">
+                {/* <div className="absolute -bottom-6 -right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-purple-600">2+</div>
                     <div className="text-sm text-gray-600">
                       Years Experience
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
