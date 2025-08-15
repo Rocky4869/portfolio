@@ -1,0 +1,11 @@
+Model Information:
+* title:	Isometric Rec Room
+* source:	https://sketchfab.com/3d-models/isometric-rec-room-d30c226a81b141c58bbb704fefe8530e
+* author:	Graf_Lev (https://sketchfab.com/Graf_Lev)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Isometric Rec Room" (https://sketchfab.com/3d-models/isometric-rec-room-d30c226a81b141c58bbb704fefe8530e) by Graf_Lev (https://sketchfab.com/Graf_Lev) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

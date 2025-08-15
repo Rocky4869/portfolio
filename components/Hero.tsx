@@ -12,14 +12,14 @@ import Model3D, { ModelLoader } from "./Model3D";
 // Camera controller component
 function CameraController() {
   const { camera } = useThree();
-  
+
   useEffect(() => {
     // Set initial camera position to see the entire model from a corner angle
     camera.position.set(8, 8, 15);
     camera.lookAt(0, 0, 0);
     camera.updateProjectionMatrix();
   }, [camera]);
-  
+
   return null;
 }
 
