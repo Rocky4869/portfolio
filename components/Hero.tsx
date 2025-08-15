@@ -1,27 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, Suspense, useRef } from "react";
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import { ChevronDown, Send } from "lucide-react";
-import { Canvas, useThree } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
-import { images } from "@/constants";
 import scrollToSection from "@/lib/utils";
-import Model3D, { ModelLoader } from "./Model3D";
-
-// Camera controller component
-function CameraController() {
-  const { camera } = useThree();
-
-  useEffect(() => {
-    // Set initial camera position to see the entire model from a corner angle
-    camera.position.set(8, 8, 15);
-    camera.lookAt(0, 0, 0);
-    camera.updateProjectionMatrix();
-  }, [camera]);
-
-  return null;
-}
+import ModelCanvas from "./ModelCanvas";
 
 export default function Hero() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -114,41 +96,8 @@ export default function Hero() {
           </div>
 
           {/* Right 3D Model */}
-          <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl h-[500px] rounded-2xl shadow-2xl overflow-hidden">
-            <Canvas
-              camera={{ position: [8, 8, 15], fov: 15 }}
-              style={{
-                background: "transparent",
-                width: "100%",
-                height: "100%",
-              }}
-              gl={{ antialias: true, alpha: true }}
-            >
-              <Suspense fallback={<ModelLoader />}>
-                <CameraController />
-                <ambientLight intensity={0.8} />
-                <directionalLight position={[5, 5, 5]} intensity={1.5} />
-                <directionalLight position={[-5, -5, -5]} intensity={0.8} />
-                <pointLight position={[0, 10, 0]} intensity={0.5} />
-
-                <Model3D
-                  modelPath={images.pokemonModel}
-                  scale={1.2}
-                  position={[0, 0, 0]}
-                  rotation={[0, 0, 0]}
-                />
-
-                <OrbitControls
-                  enableZoom={true}
-                  enablePan={false}
-                  autoRotate={false}
-                  minDistance={8}
-                  maxDistance={25}
-                  target={[0, 0, 0]}
-                />
-                <Environment preset="city" />
-              </Suspense>
-            </Canvas>
+          <div className="h-[500px] rounded-2xl shadow-2xl overflow-hidden w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl">
+            <ModelCanvas />
           </div>
         </div>
       </div>
