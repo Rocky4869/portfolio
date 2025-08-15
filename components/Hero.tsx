@@ -1,10 +1,27 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, useRef } from "react";
 import Image from "next/image";
 import { ChevronDown, Send } from "lucide-react";
+import { Canvas, useThree } from "@react-three/fiber";
+import { OrbitControls, Environment } from "@react-three/drei";
 import { images } from "@/constants";
 import scrollToSection from "@/lib/utils";
+import Model3D, { ModelLoader } from "./Model3D";
+
+// Camera controller component
+function CameraController() {
+  const { camera } = useThree();
+  
+  useEffect(() => {
+    // Set initial camera position to see the entire model from a corner angle
+    camera.position.set(8, 8, 15);
+    camera.lookAt(0, 0, 0);
+    camera.updateProjectionMatrix();
+  }, [camera]);
+  
+  return null;
+}
 
 export default function Hero() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -62,7 +79,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-20">
         <div className="grid xl:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-6 lg:space-y-8 text-center xl:text-left xl:pr-4 xl:pl-20 2xl:pr-8">
+          <div className="space-y-6 lg:space-y-8 text-center xl:text-left xl:pr-4 xl:pl-8 2xl:pr-8">
             <div className="space-y-3 lg:space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-200 leading-tight">
                 Hi, I&apos;m{" "}
@@ -96,24 +113,42 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="relative flex justify-center xl:justify-end xl:pl-4 2xl:pl-8">
-            <div className="relative">
-              {/* Background decoration */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-200 to-blue-200 rounded-full opacity-20 blur-xl"></div>
+          {/* Right 3D Model */}
+          <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl h-[500px] rounded-2xl shadow-2xl overflow-hidden">
+            <Canvas
+              camera={{ position: [8, 8, 15], fov: 15 }}
+              style={{
+                background: "transparent",
+                width: "100%",
+                height: "100%",
+              }}
+              gl={{ antialias: true, alpha: true }}
+            >
+              <Suspense fallback={<ModelLoader />}>
+                <CameraController />
+                <ambientLight intensity={0.8} />
+                <directionalLight position={[5, 5, 5]} intensity={1.5} />
+                <directionalLight position={[-5, -5, -5]} intensity={0.8} />
+                <pointLight position={[0, 10, 0]} intensity={0.5} />
 
-              {/* Main image */}
-              <div className="relative">
-                <Image
-                  src={images.myphoto1}
-                  alt="Rocky Tam"
-                  width={500}
-                  height={600}
-                  className="rounded-2xl shadow-2xl object-cover w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl"
-                  priority
+                <Model3D
+                  modelPath={images.pokemonModel}
+                  scale={1.2}
+                  position={[0, 0, 0]}
+                  rotation={[0, 0, 0]}
                 />
-              </div>
-            </div>
+
+                <OrbitControls
+                  enableZoom={true}
+                  enablePan={false}
+                  autoRotate={false}
+                  minDistance={8}
+                  maxDistance={25}
+                  target={[0, 0, 0]}
+                />
+                <Environment preset="city" />
+              </Suspense>
+            </Canvas>
           </div>
         </div>
       </div>

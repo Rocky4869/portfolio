@@ -45,4 +45,5 @@ export const socialLinks = [
     myphoto1: myphoto1,
     myphoto2: myphoto2,
     snoppy: snoppy,
+    pokemonModel: "/models/pokemon_firered_-_players_room/scene.gltf",
   };
