@@ -6,7 +6,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-40"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
     >
       <div className="text-center mb-16">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-8">

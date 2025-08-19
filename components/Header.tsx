@@ -10,9 +10,8 @@ import scrollToSection from "@/lib/utils";
 const navItems = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
   { href: "#qualification", label: "Qualification" },
-  { href: "#experiences", label: "Experiences" },
+  { href: "#skills", label: "Skills" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#contact", label: "Contact" },
 ];

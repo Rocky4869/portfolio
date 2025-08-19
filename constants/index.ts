@@ -36,6 +36,8 @@ import pwc from "@/public/images/pwc.png";
 import ch from "@/public/images/ch.png";
 import hase from "@/public/images/hase.png";
 import ppc from "@/public/images/ppc.png";
+import una from "@/public/images/una.png";
+import coxana from "@/public/images/coxana.avif";
 
 
 export const socialLinks = [
@@ -229,22 +231,22 @@ export const education = [
 
 export const work = [
   {
-    company: "Asta Systems Limited",
-    role: "Software Engineer Intern",
-    period: "Jun 2022 - Aug 2022",
-    logo: asta,
+    company: "Una Technologies Limited",
+    role: "STEM Tutor",
+    period: "Jan 2025 - Present",
+    logo: una,
   },
   {
-    company: "PwC HK",
-    role: "Firmwide Corporate Services - Global Technology Solutions Intern",
-    period: "Jan 2023 - Mar 2023",
-    logo: pwc,
+    company: "Coxana Limited",
+    role: "STEM Tutor",
+    period: "Oct 2024 - Present",
+    logo: coxana,
   },
   {
-    company: "Career Hackers",
-    role: "Frontend Developer Intern",
-    period: "Jan 2023 - Jun 2023",
-    logo: ch,
+    company: "Pet Pet Club Limited",
+    role: "Web Developer Intern",
+    period: "Mar 2025 - Jul 2025",
+    logo: ppc,
   },
   {
     company: "Hang Seng Bank",
@@ -253,10 +255,16 @@ export const work = [
     logo: hase,
   },
   {
-    company: "Pet Pet Club Limited",
-    role: "Web Developer Intern",
-    period: "Mar 2025 - Jul 2025",
-    logo: ppc,
+    company: "PwC",
+    role: "Firmwide Corporate Services - Global Technology Solutions Intern",
+    period: "Jan 2023 - Mar 2023",
+    logo: pwc,
+  },
+  {
+    company: "Asta Systems Limited",
+    role: "Software Engineer Intern",
+    period: "Jun 2022 - Aug 2022",
+    logo: asta,
   },
 ];
 
