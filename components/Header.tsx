@@ -4,17 +4,8 @@ import React, { useState } from "react";
 import { X, Menu } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { images } from "@/constants";
+import { images, navItems } from "@/constants";
 import scrollToSection from "@/lib/utils";
-
-const navItems = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#qualification", label: "Qualification" },
-  { href: "#skills", label: "Skills" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#contact", label: "Contact" },
-];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

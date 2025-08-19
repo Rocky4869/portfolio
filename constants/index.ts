@@ -47,6 +47,11 @@ import cultural_scope from "@/public/images/projects/cultural_scope.png";
 import simplified_twitter from "@/public/images/projects/twitter.png";
 import choculate from "@/public/images/projects/choculate.png";
 
+interface NavItem {
+  href: string;
+  label: string;
+}
+
 interface SocialLink {
   name: string;
   src: StaticImageData;
@@ -82,6 +87,15 @@ type Project = {
   image: StaticImageData;
   demo?: string;
 };
+
+export const navItems: NavItem[] = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#qualification", label: "Qualification" },
+  { href: "#skills", label: "Skills" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "#contact", label: "Contact" },
+];
 
 export const socialLinks: SocialLink[] = [
   {

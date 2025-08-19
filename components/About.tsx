@@ -14,7 +14,7 @@ export default function About() {
             About Me
           </h2>
           <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-            Get to know me better 
+            Get to know me better
           </p>
         </div>
 
