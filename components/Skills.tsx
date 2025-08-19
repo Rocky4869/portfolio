@@ -9,7 +9,7 @@ const Skills = () => {
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-40"
     >
       <div className="text-center mb-16">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200 mb-8">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-8">
           Skills
         </h2>
         <p className="text-lg text-gray-200 max-w-2xl mx-auto">

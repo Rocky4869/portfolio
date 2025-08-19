@@ -29,7 +29,7 @@ import framer from "@/public/images/framer.png";
 import git from "@/public/images/git.png";
 import python from "@/public/images/python.png";
 import java from "@/public/images/java.png";
-import cyss from "@/public/images/cyss.png";
+import cyss from "@/public/images/cyss.jpg";
 import cuhk from "@/public/images/cuhk.png";
 import asta from "@/public/images/asta.png";
 import pwc from "@/public/images/pwc.png";
