@@ -1,7 +1,7 @@
 import SideBar from "@/components/SideBar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-// import Skills from "@/components/Skills";
+import Skills from "@/components/Skills";
 // import Experiences from "@/components/Experiences";
 // import Portfolio from "@/components/Portfolio";
 // import Contact from "@/components/Contact";
@@ -13,11 +13,7 @@ export default function Home() {
       <SideBar />
       <Hero />
       <About />
-      {/* <Skills />
-      <Experiences />
-      <Portfolio />
-      <Contact />
-      <Footer /> */}
+      <Skills />
     </main>
   );
 }

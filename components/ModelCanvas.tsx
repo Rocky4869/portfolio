@@ -78,7 +78,7 @@ const Model3D = ({
   return <primitive ref={meshRef} object={clonedScene} />;
 };
 
-export default function Model3DCanvas() {
+export default function ModelCanvas() {
   return (
     <Canvas
       camera={{ position: [8, 8, 15], fov: 25 }}
@@ -111,5 +111,5 @@ export default function Model3DCanvas() {
     </Canvas>
   );
 }
-
 export { ModelLoader };
+
