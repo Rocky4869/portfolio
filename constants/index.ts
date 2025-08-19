@@ -32,6 +32,10 @@ import framer from "@/public/images/skills/framer.png";
 import git from "@/public/images/skills/git.png";
 import python from "@/public/images/skills/python.png";
 import java from "@/public/images/skills/java.png";
+import whatsapp from "@/public/icons/whatsapp.png";
+import telegram from "@/public/icons/telegram.png";
+import discord from "@/public/icons/discord.png";
+import messenger from "@/public/icons/messenger.png";
 
 import cyss from "@/public/images/education/cyss.jpg";
 import cuhk from "@/public/images/education/cuhk.png";
@@ -88,6 +92,12 @@ type Project = {
   demo?: string;
 };
 
+interface CommunityLink {
+  name: string;
+  src: StaticImageData;
+  href: string;
+}
+
 export const navItems: NavItem[] = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
@@ -95,6 +105,29 @@ export const navItems: NavItem[] = [
   { href: "#skills", label: "Skills" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#contact", label: "Contact" },
+];
+
+export const communityLinks: CommunityLink[] = [
+  {
+    name: "Whatsapp",
+    src: whatsapp,
+    href: "https://wa.me/85256880866",
+  },
+  {
+    name: "Telegram",
+    src: telegram,
+    href: "https://t.me/Rockylolo",
+  },
+  {
+    name: "Discord",
+    src: discord,
+    href: "https://discord.com/users/rockylolo",
+  },
+  {
+    name: "Messenger",
+    src: messenger,
+    href: "https://www.messenger.com/t/100002597255921",
+  },
 ];
 
 export const socialLinks: SocialLink[] = [

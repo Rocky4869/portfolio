@@ -13,8 +13,8 @@ export default function Home() {
       <SideBar />
       <Hero />
       <About />
-      <Skills />
       <Qualification />
+      <Skills />
       <Portfolio />
       <Contact />
       <Footer />
