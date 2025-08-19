@@ -1,0 +1,89 @@
+import Image from "next/image";
+import { education, work } from "@/constants";
+
+export default function Qualification() {
+  return (
+    <section id="qualification" className="pt-28 pb-16">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200 mb-8">
+            Qualification
+          </h2>
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+            My education and work experiences
+          </p>
+        </div>
+
+        <div className="mb-6">
+          <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-blue-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent">
+            Education
+          </h3>
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+            {education.map((s) => (
+              <div
+                key={s.name}
+                className="group relative overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-br from-[#0b0f2b]/60 to-[#1a103a]/40 p-5 sm:p-6 shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:shadow-purple-500/20"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="relative h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-xl bg-black/30 border border-purple-400/50 ring-1 ring-purple-400/30 overflow-hidden shadow-lg">
+                    <Image
+                      src={s.logo}
+                      alt={s.name}
+                      fill
+                      className="object-contain p-2 filter brightness-0 invert opacity-90"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-semibold text-white">
+                      {s.name}
+                    </h4>
+                    <p className="text-sm text-gray-300">{s.subtitle}</p>
+                    <p className="text-xs sm:text-sm text-purple-300 mt-1">
+                      {s.period}
+                    </p>
+                  </div>
+                </div>
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-purple-500/10 blur-2xl transition-opacity group-hover:opacity-80" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+            Work
+          </h3>
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+            {work.map((w) => (
+              <div
+                key={w.company}
+                className="group relative overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-br from-[#0b0f2b]/60 to-[#1a103a]/40 p-5 sm:p-6 shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:shadow-purple-500/20"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="relative h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-xl bg-black/30 border border-purple-400/50 ring-1 ring-purple-400/30 overflow-hidden shadow-lg">
+                    <Image
+                      src={w.logo}
+                      alt={w.company}
+                      fill
+                      className="object-contain p-2 filter brightness-0 invert opacity-90"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-semibold text-white">
+                      {w.company}
+                    </h4>
+                    <p className="text-sm text-gray-300">{w.role}</p>
+                    <p className="text-xs sm:text-sm text-purple-300 mt-1">
+                      {w.period}
+                    </p>
+                  </div>
+                </div>
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-purple-500/10 blur-2xl transition-opacity group-hover:opacity-80" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

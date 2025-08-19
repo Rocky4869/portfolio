@@ -26,7 +26,16 @@ import mui from "@/public/images/mui.png";
 import firebase from "@/public/images/Firebase.png";
 import reactnative from "@/public/images/reactnative.png";
 import framer from "@/public/images/framer.png";
-
+import git from "@/public/images/git.png";
+import python from "@/public/images/python.png";
+import java from "@/public/images/java.png";
+import cyss from "@/public/images/cyss.png";
+import cuhk from "@/public/images/cuhk.png";
+import asta from "@/public/images/asta.png";
+import pwc from "@/public/images/pwc.png";
+import ch from "@/public/images/ch.png";
+import hase from "@/public/images/hase.png";
+import ppc from "@/public/images/ppc.png";
 
 
 export const socialLinks = [
@@ -162,6 +171,18 @@ export const backend_skill = [
     width: 80,
     height: 80,
   },
+  {
+    skill_name: "Python",
+    Image: python,
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Java",
+    Image: java,
+    width: 80,
+    height: 80,
+  },
 ];
 
 export const full_stack = [
@@ -177,15 +198,69 @@ export const full_stack = [
     width: 70,
     height: 70,
   },
-
   {
     skill_name: "Figma",
     Image: figma,
     width: 50,
     height: 50,
   },
-
+  {
+    skill_name: "Git",
+    Image: git,
+    width: 80,
+    height: 80,
+  },
 ];
+
+export const education = [
+  {
+    name: "S.K.H. Chan Young Secondary School",
+    subtitle: "Secondary Education",
+    period: "2014 - 2020",
+    logo: cyss,
+  },
+  {
+    name: "The Chinese University of Hong Kong",
+    subtitle: "B.Sc. Computer Science",
+    period: "2020 - 2025",
+    logo: cuhk,
+  },
+];
+
+export const work = [
+  {
+    company: "Asta Systems Limited",
+    role: "Software Engineer Intern",
+    period: "Jun 2022 - Aug 2022",
+    logo: asta,
+  },
+  {
+    company: "PwC HK",
+    role: "Firmwide Corporate Services - Global Technology Solutions Intern",
+    period: "Jan 2023 - Mar 2023",
+    logo: pwc,
+  },
+  {
+    company: "Career Hackers",
+    role: "Frontend Developer Intern",
+    period: "Jan 2023 - Jun 2023",
+    logo: ch,
+  },
+  {
+    company: "Hang Seng Bank",
+    role: "Data Analyst Intern",
+    period: "Jun 2023 - Dec 2023",
+    logo: hase,
+  },
+  {
+    company: "Pet Pet Club Limited",
+    role: "Web Developer Intern",
+    period: "Mar 2025 - Jul 2025",
+    logo: ppc,
+  },
+];
+
+
 
   export const images = {
     myphoto1: myphoto1,

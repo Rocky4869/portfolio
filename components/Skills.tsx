@@ -6,9 +6,16 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20"
-      style={{ transform: "scale(0.9" }}
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-40"
     >
+      <div className="text-center mb-16">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200 mb-8">
+          Skills
+        </h2>
+        <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+          My skills and technologies I use
+        </p>
+      </div>
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {frontend_skill.map((image, index) => (
           <SkillDataProvider
