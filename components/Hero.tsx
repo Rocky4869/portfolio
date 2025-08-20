@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ChevronDown, Send } from "lucide-react";
+import { Send, ExternalLink } from "lucide-react";
 import scrollToSection from "@/lib/utils";
 import ModelCanvas from "./ModelCanvas";
 
@@ -85,12 +85,18 @@ export default function Hero() {
                 <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
 
+              {/* Resume Button */}
               <button
-                onClick={() => scrollToSection("#about")}
+                onClick={() => {
+                  window.open(
+                    "https://docs.google.com/document/d/1YHc4JXeY7Ab49yL1K2aGONZa8zPdxHjA0xe4SUxl8dI/edit?usp=sharing",
+                    "_blank"
+                  );
+                }}
                 className="group border-2 border-gray-300 hover:border-purple-600 text-gray-200 hover:text-purple-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:bg-purple-50 flex items-center justify-center gap-3"
               >
-                About Me
-                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-1 transition-transform duration-200" />
+                View My Resume
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
             </div>
           </div>

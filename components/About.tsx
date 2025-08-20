@@ -1,8 +1,5 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
 import { images } from "@/constants";
 
 export default function About() {
@@ -22,7 +19,7 @@ export default function About() {
           {/* Left Side - Personal Image */}
           <div className="relative flex justify-center lg:justify-start">
             <Image
-              src={images.myphoto2}
+              src={images.myphoto3}
               alt="Rocky Tam - Personal Photo"
               width={500}
               height={600}
@@ -35,10 +32,7 @@ export default function About() {
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-6">
               <div className="space-y-4">
-                <p className="text-lg lg:text-xl text-gray-200 leading-relaxed mb-5">
-                  I am a 22-year-old from Hong Kong who just graduated from CUHK
-                  with a degree in Computer Science.
-                </p>
+                <p className="text-lg lg:text-xl text-gray-200 leading-relaxed mb-5"></p>
 
                 {/* Info Card */}
                 <div className="group relative bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-md p-6 rounded-xl border border-purple-500/30 shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 hover:border-purple-400/60 overflow-hidden">
@@ -55,6 +49,10 @@ export default function About() {
                       </span>
                     </h4>
                     <p className="text-gray-300 leading-relaxed">
+                      I am a 22-year-old from Hong Kong who just graduated from
+                      CUHK with a degree in Computer Science.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed mt-2">
                       I am people-oriented and enjoy interacting with others. I
                       am passionate about improving my coding skills &
                       developing applications & websites.
@@ -62,22 +60,6 @@ export default function About() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Resume Button */}
-            <div className="pt-4">
-              <button
-                onClick={() => {
-                  window.open(
-                    "https://docs.google.com/document/d/1YHc4JXeY7Ab49yL1K2aGONZa8zPdxHjA0xe4SUxl8dI/edit?usp=sharing",
-                    "_blank"
-                  );
-                }}
-                className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3 mx-auto lg:mx-0"
-              >
-                View My Resume
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
             </div>
 
             {/* Additional Info Cards */}
@@ -90,7 +72,7 @@ export default function About() {
 
                 <div className="relative z-10 text-center">
                   <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-1">
-                    2+
+                    1+
                   </div>
                   <div className="text-sm text-gray-300 font-medium">
                     Years Experience
@@ -106,7 +88,7 @@ export default function About() {
 
                 <div className="relative z-10 text-center">
                   <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">
-                    5+
+                    3+
                   </div>
                   <div className="text-sm text-gray-300 font-medium">
                     Completed Projects
@@ -122,7 +104,7 @@ export default function About() {
 
                 <div className="relative z-10 text-center">
                   <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-1">
-                    4+
+                    5+
                   </div>
                   <div className="text-sm text-gray-300 font-medium">
                     Companies Worked For

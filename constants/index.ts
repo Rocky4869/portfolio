@@ -8,6 +8,7 @@ import X from "@/public/icons/X.png";
 
 import myphoto1 from "@/public/images/myphoto1.jpg";
 import myphoto2 from "@/public/images/myphoto2.jpg";
+import myphoto3 from "@/public/images/myphoto3.jpeg";
 import snoppy from "@/public/images/snoppy.png";
 
 import html from "@/public/images/skills/html.png";
@@ -404,6 +405,7 @@ export const projects: Project[] = [
 export const images = {
   myphoto1: myphoto1,
   myphoto2: myphoto2,
+  myphoto3: myphoto3,
   snoppy: snoppy,
   pokemonModel: "/models/pokemon_firered_-_players_room/scene.gltf",
   roomModel: "/models/isometric_rec_room/scene.gltf",
