@@ -46,7 +46,6 @@ import ch from "@/public/images/work/ch.png";
 import hase from "@/public/images/work/hase.png";
 import ppc from "@/public/images/work/ppc.png";
 import una from "@/public/images/work/una.png";
-import coxana from "@/public/images/work/coxana.avif";
 
 import cultural_scope from "@/public/images/projects/cultural_scope.png";
 import simplified_twitter from "@/public/images/projects/twitter.png";
@@ -328,12 +327,6 @@ export const work: Work[] = [
     logo: una,
   },
   {
-    company: "Coxana Limited",
-    role: "STEM Tutor",
-    period: "Oct 2024 - Present",
-    logo: coxana,
-  },
-  {
     company: "Pet Pet Club Limited",
     role: "Web Developer Intern",
     period: "Mar 2025 - Jul 2025",
@@ -353,7 +346,7 @@ export const work: Work[] = [
   },
   {
     company: "PwC",
-    role: "Firmwide Corporate Services - Global Technology Solutions Intern",
+    role: "Global Technology Solutions Intern",
     period: "Jan 2023 - Mar 2023",
     logo: pwc,
   },

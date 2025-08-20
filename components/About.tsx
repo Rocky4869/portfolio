@@ -32,8 +32,6 @@ export default function About() {
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-6">
               <div className="space-y-4">
-                <p className="text-lg lg:text-xl text-gray-200 leading-relaxed mb-5"></p>
-
                 {/* Info Card */}
                 <div className="group relative bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-md p-6 rounded-xl border border-purple-500/30 shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 hover:border-purple-400/60 overflow-hidden">
                   {/* Animated background */}
@@ -48,14 +46,17 @@ export default function About() {
                         ESFJ
                       </span>
                     </h4>
-                    <p className="text-gray-300 leading-relaxed">
-                      I am a 22-year-old from Hong Kong who just graduated from
-                      CUHK with a degree in Computer Science.
-                    </p>
                     <p className="text-gray-300 leading-relaxed mt-2">
-                      I am people-oriented and enjoy interacting with others. I
-                      am passionate about improving my coding skills &
-                      developing applications & websites.
+                      Rocky is a Hong Kong–based software engineer and a
+                      graduate of The Chinese University of Hong Kong (B.Sc. in
+                      Computer Science), focused on building user‑centric web
+                      applications across the stack.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed mt-4">
+                      He is collaborative and people‑oriented, with a strong
+                      interest in shipping maintainable, performant software. He
+                      enjoys continuous learning and building applications that
+                      deliver clear, measurable value.
                     </p>
                   </div>
                 </div>
