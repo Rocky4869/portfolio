@@ -63,12 +63,18 @@ export default function Portfolio() {
                         <h3 className="text-2xl font-semibold text-white">
                           {p.title}
                         </h3>
-                        <p className="text-sm text-purple-300 mt-1">
+                        <p className="text-sm text-purple-300 mt-2">
                           {p.subtitle}
                         </p>
                         <ul className="mt-4 space-y-2 list-disc list-inside text-gray-300">
-                          {p.bullets.map((b) => (
-                            <li key={b}>{b}</li>
+                          {p.bullets.map((b, index) => (
+                            <li
+                              key={index}
+                              className="flex items-start space-x-3 text-gray-300"
+                            >
+                              <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mt-2.5 flex-shrink-0" />
+                              <span className="leading-relaxed">{b}</span>
+                            </li>
                           ))}
                         </ul>
                         <div className="flex flex-col justify-center mt-4">
