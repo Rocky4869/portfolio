@@ -63,8 +63,8 @@ export default function Qualification() {
                   <div
                     className={`relative rounded-xl overflow-hidden ${
                       w.company === "Hang Seng Bank"
-                        ? "h-32 w-40 sm:h-32 sm:w-40 md:h-44 md:w-60"
-                        : "h-24 w-32 sm:h-24 sm:w-32 md:h-36 md:w-48"
+                        ? "h-24 w-40 md:h-36 md:w-60"
+                        : "h-24 w-32 md:h-36 md:w-48"
                     }`}
                   >
                     <Image
