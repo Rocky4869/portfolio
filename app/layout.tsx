@@ -6,6 +6,9 @@ import Header from "@/components/Header";
 export const metadata: Metadata = {
   title: "Rocky's Portfolio",
   description: "Rocky's Portfolio",
+  icons: {
+    icon: "/images/snoppy.png",
+  },  
 };
 
 export default function RootLayout({

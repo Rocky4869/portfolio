@@ -95,14 +95,14 @@ export default function ModelCanvas() {
         />
 
         <OrbitControls
-          enableZoom={true}
-          enablePan={true}
+          enableZoom={false}
+          enablePan={false}
           autoRotate={true}
           autoRotateSpeed={0.5}
           minDistance={3}
           maxDistance={15}
           target={[0, 0, 0]}
-          zoomToCursor={true}
+          zoomToCursor={false}
           enableDamping={true}
           dampingFactor={0.05}
         />
@@ -112,4 +112,3 @@ export default function ModelCanvas() {
   );
 }
 export { ModelLoader };
-
