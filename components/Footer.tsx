@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-transparent to-[#0b0f2b]/80 border-t border-purple-500/20">
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="flex flex-col md:flex-row justify-between gap-8 px-4">
+        <div className="flex flex-col md:flex-row justify-between gap-8 px-4 md:px-8">
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">
@@ -52,9 +52,10 @@ export default function Footer() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm"
+                  className="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm cursor-pointer relative group"
                 >
                   {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#9c57e0] transition-all duration-300 group-hover:w-full"></span>
                 </button>
               ))}
             </div>

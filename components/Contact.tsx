@@ -18,10 +18,35 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<
+    | { state: "idle" }
+    | { state: "loading" }
+    | { state: "success" }
+    | { state: "error"; message: string }
+  >({ state: "idle" });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setStatus({ state: "loading" });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data?.ok) {
+        throw new Error(data?.error || "Failed to send message");
+      }
+
+      setStatus({ state: "success" });
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Unexpected error";
+      setStatus({ state: "error", message: msg });
+    }
   };
 
   return (
@@ -31,7 +56,7 @@ export default function Contact() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
             Contact
           </h2>
-          <p className="mt-3 text-gray-300">Let's get in touch</p>
+          <p className="mt-3 text-gray-300">Let&apos;s get in touch</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -166,10 +191,20 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-600 hover:to-cyan-600 hover:scale-105 transition-all duration-300 cursor-pointer"
+                disabled={status.state === "loading"}
+                className="w-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-600 hover:to-cyan-600 hover:scale-105 transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status.state === "loading" ? "Sending..." : "Send Message"}
               </button>
+
+              {status.state === "success" && (
+                <p className="text-green-400 text-sm">
+                  Your message has been sent!
+                </p>
+              )}
+              {status.state === "error" && (
+                <p className="text-red-400 text-sm">{status.message}</p>
+              )}
             </form>
 
             <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-purple-500/10 blur-2xl transition-opacity group-hover:opacity-80" />
