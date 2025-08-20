@@ -19,7 +19,7 @@ function CameraController() {
 
   useEffect(() => {
     // Set initial camera position to see the entire model from a corner angle
-    camera.position.set(8, 8, 15);
+    camera.position.set(6, 6, 12);
     camera.lookAt(0, 0, 0);
     camera.updateProjectionMatrix();
   }, [camera]);
@@ -68,8 +68,8 @@ const Model3D = ({
 
       // Scale to fit in viewport if needed
       const maxDim = Math.max(size.x, size.y, size.z);
-      if (maxDim > 5) {
-        const scaleFactor = 5 / maxDim;
+      if (maxDim > 4) {
+        const scaleFactor = 4 / maxDim;
         clonedScene.scale.multiplyScalar(scaleFactor);
       }
     }
@@ -81,15 +81,16 @@ const Model3D = ({
 export default function ModelCanvas() {
   return (
     <Canvas
-      camera={{ position: [8, 8, 15], fov: 25 }}
+      camera={{ position: [6, 6, 12], fov: 30 }}
       gl={{ antialias: true, alpha: true }}
+      style={{ width: "100%", height: "100%" }}
     >
       <Suspense fallback={<ModelLoader />}>
         <CameraController />
 
         <Model3D
           modelPath={images.pokemonModel}
-          scale={1.2}
+          scale={1.0}
           position={[0, 0, 0]}
           rotation={[0, 0, 0]}
         />
@@ -99,8 +100,8 @@ export default function ModelCanvas() {
           enablePan={false}
           autoRotate={true}
           autoRotateSpeed={0.5}
-          minDistance={3}
-          maxDistance={15}
+          minDistance={2}
+          maxDistance={12}
           target={[0, 0, 0]}
           zoomToCursor={false}
           enableDamping={true}
