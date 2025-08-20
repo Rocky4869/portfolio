@@ -10,6 +10,8 @@ import myphoto1 from "@/public/images/myphoto1.jpg";
 import myphoto2 from "@/public/images/myphoto2.jpg";
 import myphoto3 from "@/public/images/myphoto3.jpeg";
 import snoppy from "@/public/images/snoppy.png";
+import brand1 from "@/public/images/brand1.png";
+import brand2 from "@/public/images/brand2.png";
 
 import html from "@/public/images/skills/html.png";
 import css from "@/public/images/skills/css.png";
@@ -400,6 +402,8 @@ export const images = {
   myphoto2: myphoto2,
   myphoto3: myphoto3,
   snoppy: snoppy,
+  brand1: brand1,
+  brand2: brand2,
   pokemonModel: "/models/pokemon_firered_-_players_room/scene.gltf",
   roomModel: "/models/isometric_rec_room/scene.gltf",
 };

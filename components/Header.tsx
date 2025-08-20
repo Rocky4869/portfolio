@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { X, Menu } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
 import { images, navItems } from "@/constants";
 import scrollToSection from "@/lib/utils";
@@ -11,28 +10,18 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300  backdrop-blur-lg shadow-lg border-b shadow-[#2A0E61]/50 bg-[#03001417]">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-lg shadow-lg border-b shadow-[#2A0E61]/50 bg-[#03001417]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
-          {/* Logo/Brand */}
-          <div className="flex items-center gap-2">
-            <Image
-              src={images.snoppy}
-              alt="Snoppy"
-              width={50}
-              height={50}
-              className="rounded-full nav__img mr-2"
-            />
-            <Link
-              href="#home"
-              className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-              onClick={() => {
-                scrollToSection("#home");
-              }}
-            >
-              Rocky
-            </Link>
-          </div>
+          {/* Brand */}
+          <Image
+            src={images.brand1}
+            alt="Brand"
+            width={300}
+            height={300}
+            className="rounded-full hover:scale-105 transition-all duration-300 cursor-pointer"
+            onClick={() => scrollToSection("#home")}
+          />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-8">
