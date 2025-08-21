@@ -59,35 +59,41 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pb-12"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-12 pb-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 items-center">
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8 text-center lg:text-left xl:pr-4 xl:pl-4 order-2 lg:order-1">
-            <motion.div
-              className="space-y-3 lg:space-y-4"
-              variants={slideInFromLeft(0.5)}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-200 leading-tight">
+            <div className="space-y-3 lg:space-y-4">
+              <motion.h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-200 leading-tight"
+                variants={slideInFromLeft(0.3)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 Hi, I&apos;m{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Rocky
                 </span>
-              </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold min-h-[1.2em] home__subtitle flex items-center justify-center xl:justify-start">
+              </motion.h1>
+              <motion.h2
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold min-h-[1.2em] home__subtitle flex items-center justify-center xl:justify-start"
+                variants={slideInFromLeft(0.5)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <span className="min-w-[200px] xl:min-w-[300px]">
                   {currentTitle || "\u00A0"}
                 </span>
-              </h2>
-            </motion.div>
+              </motion.h2>
+            </div>
 
             <motion.div
               className="hero-buttons flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-5 justify-center lg:justify-start w-full max-w-md sm:max-w-none mx-auto lg:mx-0"
-              variants={slideInFromLeft(0.8)}
+              variants={slideInFromLeft(0.7)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
@@ -137,7 +143,7 @@ export default function Hero() {
             alt="Brand"
             width={500}
             height={600}
-            className="rounded-2xl shadow-2xl overflow-hidden order-1 xl:order-2 pt-12"
+            className="rounded-2xl shadow-2xl overflow-hidden order-1 xl:order-2"
           />
         </div>
       </div>
