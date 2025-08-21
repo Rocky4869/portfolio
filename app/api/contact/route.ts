@@ -33,7 +33,9 @@ export async function POST(req: NextRequest) {
     });
 
     const subject = `New message from ${name}`;
-    const text = `Name: ${name}\nEmail: ${email}\nPhone: ${phone ?? ""}\n\nMessage:\n${message}`;
+    const text = `Name: ${name}\nEmail: ${email}\nPhone: ${
+      phone ?? ""
+    }\n\nMessage:\n${message}`;
     const html = `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
         <p><strong>Name:</strong> ${name}</p>
@@ -44,7 +46,7 @@ export async function POST(req: NextRequest) {
     `;
 
     await transporter.sendMail({
-      from: { address: user },
+      from: { address: user, name: "Portfolio Contact Form" },
       replyTo: email,
       to,
       subject,
@@ -62,5 +64,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-
-
