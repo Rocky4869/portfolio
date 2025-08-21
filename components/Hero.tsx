@@ -61,7 +61,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 py-16 lg:py-20 w-full">
         <div className="grid xl:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-6 lg:space-y-8 text-center xl:text-left xl:pr-4 xl:pl-4 2xl:pr-8 2xl:pl-8 order-2 xl:order-1">
+          <div className="space-y-6 lg:space-y-8 text-center xl:text-left xl:pr-4 xl:pl-4 order-2 xl:order-1">
             <div className="space-y-3 lg:space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-200 leading-tight">
                 Hi, I&apos;m{" "}
