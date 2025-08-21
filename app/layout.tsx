@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import StarsCanvas from "@/components/StarsBackground";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Rocky's Portfolio",
   description: "Rocky's Portfolio",
   icons: {
     icon: "/images/snoppy.png",
-  },  
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +23,7 @@ export default function RootLayout({
         <StarsCanvas />
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
