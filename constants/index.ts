@@ -83,7 +83,7 @@ interface Work {
   role: string;
   period: string;
   logo: StaticImageData;
-} 
+}
 
 type Project = {
   key: string;
@@ -222,7 +222,7 @@ export const frontend_skill: Skill[] = [
   },
   {
     skill_name: "Next.js",
-        Image: next,
+    Image: next,
     width: 80,
     height: 80,
   },
@@ -391,7 +391,7 @@ export const projects: Project[] = [
     bullets: [
       "AI-driven expense tracking and personalized budgeting mobile app.",
       "Integrating multiple payment gateways for view of expenses.",
-      "Including ChocoBot, an AI chatbot offering tailored financial guidance."
+      "Including ChocoBot, an AI chatbot offering tailored financial guidance.",
     ],
     image: choculate,
   },

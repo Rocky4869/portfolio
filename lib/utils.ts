@@ -3,8 +3,7 @@ const scrollToSection = (href: string) => {
   if (element) {
     const headerHeight = 50;
     const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition =
-      elementPosition + window.pageYOffset - headerHeight;
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
     window.scrollTo({
       top: offsetPosition,
