@@ -35,7 +35,7 @@ export default function Portfolio() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="portfolio" className="py-20">
+    <section id="portfolio" className="pt-20 pb-60">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
