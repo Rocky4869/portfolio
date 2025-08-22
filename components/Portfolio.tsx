@@ -36,7 +36,7 @@ export default function Portfolio() {
 
   return (
     <section id="portfolio" className="pt-20 pb-60">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
             Portfolio
@@ -49,45 +49,50 @@ export default function Portfolio() {
             <div className="embla__container">
               {projects.map((p) => (
                 <div className="embla__slide" key={p.key}>
-                  <div className="group relative overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-br from-[#0b0f2b]/60 to-[#1a103a]/40 shadow-xl">
-                    <div className="grid md:grid-cols-2 gap-0">
-                      <div className="relative h-64 md:h-96 w-full">
-                        <Image
-                          src={p.image}
-                          alt={p.title}
-                          fill
-                          className="object-contain p-4"
-                        />
+                  <div className="group relative rounded-2xl border border-purple-500/30 bg-gradient-to-br from-[#0b0f2b]/60 to-[#1a103a]/40 shadow-xl">
+                    <div className="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl">
+                      <div className="flex items-center justify-center h-48 sm:h-64 md:h-96">
+                        <div className="relative overflow-hidden w-3/4 md:w-full h-full">
+                          <Image
+                            src={p.image}
+                            alt={p.title}
+                            fill
+                            className="object-contain p-4"
+                          />
+                        </div>
                       </div>
-                      <div className="p-6 sm:p-8 flex flex-col justify-center">
-                        <h3 className="text-2xl font-semibold text-white">
-                          {p.title}
-                        </h3>
-                        <p className="text-sm text-purple-300 mt-2">
+                      <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-center min-h-0">
+                        <div className="flex flex-row justify-between items-center">
+                          <h3 className="text-xl sm:text-2xl font-semibold text-white leading-tight">
+                            {p.title}
+                          </h3>
+                          <div className="flex flex-col justify-center">
+                            <a
+                              href={p.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <button className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-4 py-2 rounded-md hover:scale-105 transition-all duration-300 cursor-pointer text-sm sm:text-base">
+                                Demo
+                              </button>
+                            </a>
+                          </div>
+                        </div>
+                        <p className="text-sm sm:text-base text-purple-300 mt-2 leading-relaxed">
                           {p.subtitle}
                         </p>
-                        <ul className="mt-4 space-y-2 list-disc list-inside text-gray-300">
+
+                        <ul className="mt-4 space-y-3 list-disc list-inside text-gray-300">
                           {p.bullets.map((b, index) => (
                             <li
                               key={index}
-                              className="flex items-start space-x-3 text-gray-300"
+                              className="flex items-start space-x-3 text-gray-300 text-sm sm:text-base"
                             >
                               <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mt-2.5 flex-shrink-0" />
                               <span className="leading-relaxed">{b}</span>
                             </li>
                           ))}
                         </ul>
-                        <div className="flex flex-col justify-center mt-4">
-                          <a
-                            href={p.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <button className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-4 py-2 rounded-md hover:scale-105 transition-all duration-300 cursor-pointer">
-                              Demo
-                            </button>
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -124,6 +129,12 @@ export default function Portfolio() {
         .embla__slide {
           flex: 0 0 100%;
           min-width: 0;
+          padding: 0 0.5rem;
+        }
+        @media (min-width: 640px) {
+          .embla__slide {
+            padding: 0 1rem;
+          }
         }
       `}</style>
     </section>

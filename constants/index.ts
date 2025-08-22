@@ -364,7 +364,7 @@ export const projects: Project[] = [
   {
     key: "cultural-scope",
     title: "Cultural Scope",
-    subtitle: "ReactJS/Node.js/Express.js/Git/MongoDB/Figma/Material UI",
+    subtitle: "ReactJS/Node.js/Express.js/Git/MongoDB/Figma",
     bullets: [
       "Intuitive platform connecting users with cultural locations and events",
       "Detailed location pages integrated with Google Maps for easy navigation.",
