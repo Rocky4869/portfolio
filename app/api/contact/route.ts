@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
     const transporter = nodemailer.createTransport({
       host,
       port,
-      secure: port === 465,
+      secure: false,
       auth: { user, pass },
     });
 
