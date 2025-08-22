@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { toast } from "react-toastify";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -18,16 +19,11 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const [status, setStatus] = useState<
-    | { state: "idle" }
-    | { state: "loading" }
-    | { state: "success" }
-    | { state: "error"; message: string }
-  >({ state: "idle" });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus({ state: "loading" });
+    setIsLoading(true);
 
     try {
       const res = await fetch("/api/contact", {
@@ -41,11 +37,27 @@ export default function Contact() {
         throw new Error(data?.error || "Failed to send message");
       }
 
-      setStatus({ state: "success" });
+      toast.success("Your message has been sent successfully!", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Unexpected error";
-      setStatus({ state: "error", message: msg });
+      toast.error(`Failed to send message: ${msg}`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -191,20 +203,11 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={status.state === "loading"}
+                disabled={isLoading}
                 className="w-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-600 hover:to-cyan-600 hover:scale-105 transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {status.state === "loading" ? "Sending..." : "Send Message"}
+                {isLoading ? "Sending..." : "Send Message"}
               </button>
-
-              {status.state === "success" && (
-                <p className="text-green-400 text-sm">
-                  Your message has been sent!
-                </p>
-              )}
-              {status.state === "error" && (
-                <p className="text-red-400 text-sm">{status.message}</p>
-              )}
             </form>
 
             <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-purple-500/10 blur-2xl transition-opacity group-hover:opacity-80" />

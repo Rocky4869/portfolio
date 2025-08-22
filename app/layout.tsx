@@ -3,6 +3,8 @@ import "./globals.css";
 import StarsCanvas from "@/components/StarsBackground";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: "Rocky's Portfolio",
@@ -24,6 +26,23 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          toastStyle={{
+            backgroundColor: "#1a103a",
+            border: "1px solid #7c3aed",
+            color: "#ffffff",
+          }}
+        />
       </body>
     </html>
   );
