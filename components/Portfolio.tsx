@@ -63,9 +63,22 @@ export default function Portfolio() {
                       </div>
                       <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-center min-h-0">
                         <div className="flex flex-row justify-between items-center">
-                          <h3 className="text-xl sm:text-2xl font-semibold text-white leading-tight">
-                            {p.title}
-                          </h3>
+                          <div className="flex flex-col justify-between">
+                            <h3 className="text-xl sm:text-2xl font-semibold text-white leading-tight">
+                              {p.title}
+                            </h3>
+                            <div className="text-sm sm:text-base text-purple-300 mt-2 leading-relaxed">
+                              {p.stacks.split("\n").map((line, index) => (
+                                <p
+                                  key={index}
+                                  className="text-xs sm:text-sm text-purple-300"
+                                >
+                                  {line}
+                                </p>
+                              ))}
+                            </div>
+                          </div>
+
                           <div className="flex flex-col justify-center">
                             <a
                               href={p.demo}
@@ -78,9 +91,6 @@ export default function Portfolio() {
                             </a>
                           </div>
                         </div>
-                        <p className="text-sm sm:text-base text-purple-300 mt-2 leading-relaxed">
-                          {p.subtitle}
-                        </p>
 
                         <ul className="mt-4 space-y-3 list-disc list-inside text-gray-300">
                           {p.bullets.map((b, index) => (

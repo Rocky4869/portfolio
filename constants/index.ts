@@ -88,7 +88,7 @@ interface Work {
 type Project = {
   key: string;
   title: string;
-  subtitle: string;
+  stacks: string;
   bullets: string[];
   image: StaticImageData;
   demo?: string;
@@ -364,7 +364,7 @@ export const projects: Project[] = [
   {
     key: "cultural-scope",
     title: "Cultural Scope",
-    subtitle: "ReactJS/Node.js/Express.js/Git/MongoDB/Figma",
+    stacks: "React/Node.js/MongoDB",
     bullets: [
       "Intuitive platform connecting users with cultural locations and events",
       "Detailed location pages integrated with Google Maps for easy navigation.",
@@ -376,7 +376,7 @@ export const projects: Project[] = [
   {
     key: "simplified-twitter",
     title: "Simplified Twitter",
-    subtitle: "ReactJS/Node.js/Express.js/Git/Firebase/MongoDB",
+    stacks: "React/Node.js/Firebase",
     bullets: [
       "Streamlined and easy-to-use version of Twitter.",
       "Focus on simplicity, user-friendliness, and essential features.",
@@ -387,7 +387,7 @@ export const projects: Project[] = [
   {
     key: "choculate",
     title: "Choculate",
-    subtitle: "React Native/Figma",
+    stacks: "React Native/Figma",
     bullets: [
       "AI-driven expense tracking and personalized budgeting mobile app.",
       "Integrating multiple payment gateways for view of expenses.",
