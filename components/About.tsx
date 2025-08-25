@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
-import Image from "next/image";
 import { images } from "@/constants";
+import { motion } from "framer-motion";
+import { slideInFromLeft, slideInFromRight } from "@/lib/motion";
 
 export default function About() {
   return (
@@ -18,18 +21,27 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* Left Side - Personal Image */}
           <div className="relative flex justify-center lg:justify-start">
-            <Image
-              src={images.myphoto3}
+            <motion.img
+              src={images.myphoto3.src}
               alt="Rocky Tam - Personal Photo"
               width={500}
               height={600}
               className="rounded-2xl shadow-2xl object-cover w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl"
-              priority
+              variants={slideInFromLeft(0.3)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
             />
           </div>
 
           {/* Right Side - Content */}
-          <div className="space-y-8 text-center lg:text-left">
+          <motion.div
+            className="space-y-8 text-center lg:text-left"
+            variants={slideInFromRight(0.3)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <div className="space-y-6">
               <div className="space-y-4">
                 {/* Info Card */}
@@ -113,7 +125,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

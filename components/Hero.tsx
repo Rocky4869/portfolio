@@ -4,9 +4,8 @@ import React, { useState, useEffect } from "react";
 import { Send, ExternalLink } from "lucide-react";
 import scrollToSection from "@/lib/utils";
 import { motion } from "framer-motion";
-import { slideInFromLeft } from "@/lib/motion";
+import { slideInFromLeft, slideInFromRight } from "@/lib/motion";
 import { images } from "@/constants";
-import Image from "next/image";
 
 export default function Hero() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -138,12 +137,16 @@ export default function Hero() {
           </div>
 
           {/* Image */}
-          <Image
-            src={images.myphoto1}
+          <motion.img
+            src={images.myphoto1.src}
             alt="Brand"
             width={500}
             height={600}
             className="rounded-2xl shadow-2xl overflow-hidden order-1 xl:order-2"
+            variants={slideInFromRight(0.3)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
           />
         </div>
       </div>

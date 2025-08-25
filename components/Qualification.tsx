@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { education, work } from "@/constants";
+import { motion } from "framer-motion";
+import { slideInFromTop } from "@/lib/motion";
 
 export default function Qualification() {
   return (
@@ -14,7 +18,13 @@ export default function Qualification() {
           </p>
         </div>
 
-        <div className="mb-6">
+        <motion.div
+          className="mb-6"
+          variants={slideInFromTop(0.3)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-blue-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent">
             Education
           </h3>
@@ -47,9 +57,15 @@ export default function Qualification() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-8">
+        <motion.div
+          className="mt-8"
+          variants={slideInFromTop(0.5)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-blue-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent">
             Work
           </h3>
@@ -87,7 +103,7 @@ export default function Qualification() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
