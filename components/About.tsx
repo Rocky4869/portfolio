@@ -3,7 +3,7 @@
 import React from "react";
 import { images } from "@/constants";
 import { motion } from "framer-motion";
-import { slideInFromLeft, slideInFromRight } from "@/lib/motion";
+import { slideInFromLeft, slideInFromTop } from "@/lib/motion";
 
 export default function About() {
   return (
@@ -37,7 +37,7 @@ export default function About() {
           {/* Right Side - Content */}
           <motion.div
             className="space-y-8 text-center lg:text-left"
-            variants={slideInFromRight(0.3)}
+            variants={slideInFromTop(0.3)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}

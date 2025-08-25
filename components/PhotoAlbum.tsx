@@ -78,7 +78,7 @@ export default function PhotoAlbum() {
       </div>
 
       {/* Main display */}
-      <div className="w-[400px] h-[450px] lg:w-[450px] xl:w-[500px] rounded-xl overflow-hidden shadow-2xl">
+      <div className="w-[300px] h-[450px] sm:w-[400px] sm:h-[450px] lg:w-[450px] xl:w-[500px] rounded-xl overflow-hidden shadow-2xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPhotoIndex}
