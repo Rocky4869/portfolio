@@ -15,7 +15,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Brand */}
           <Image
-            src={images.brand1}
+            src={images.brand}
             alt="Brand"
             width={300}
             height={300}

@@ -5,7 +5,7 @@ import { Send, ExternalLink } from "lucide-react";
 import scrollToSection from "@/lib/utils";
 import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "@/lib/motion";
-import { images } from "@/constants";
+import PhotoAlbum from "./PhotoAlbum";
 
 export default function Hero() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -58,7 +58,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-12 pb-12"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 pb-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 items-center">
@@ -136,18 +136,16 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Image */}
-          <motion.img
-            src={images.myphoto1.src}
-            alt="Brand"
-            width={500}
-            height={600}
-            className="rounded-2xl shadow-2xl overflow-hidden order-1 xl:order-2"
+          {/* Photo Album */}
+          <motion.div
+            className="flex justify-center lg:justify-end order-1 lg:order-2"
             variants={slideInFromRight(0.3)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-          />
+          >
+            <PhotoAlbum />
+          </motion.div>
         </div>
       </div>
     </section>

@@ -22,7 +22,7 @@ export default function About() {
           {/* Left Side - Personal Image */}
           <div className="relative flex justify-center lg:justify-start">
             <motion.img
-              src={images.myphoto3.src}
+              src={images.myphoto.src}
               alt="Rocky Tam - Personal Photo"
               width={500}
               height={600}

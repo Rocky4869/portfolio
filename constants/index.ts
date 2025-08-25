@@ -6,12 +6,19 @@ import youtube from "@/public/icons/youtube.png";
 import linkedin from "@/public/icons/linkedin.png";
 import X from "@/public/icons/X.png";
 
-import myphoto1 from "@/public/images/myphoto1.jpg";
-import myphoto2 from "@/public/images/myphoto2.jpg";
-import myphoto3 from "@/public/images/myphoto3.jpeg";
+import myphoto from "@/public/images/myphoto.jpeg";
 import snoppy from "@/public/images/snoppy.png";
-import brand1 from "@/public/images/brand1.png";
-import brand2 from "@/public/images/brand2.png";
+import brand from "@/public/images/brand.png";
+
+// Personal album photos
+import personal1 from "@/public/images/personal/myphoto1.jpeg";
+import personal2 from "@/public/images/personal/myphoto2.jpeg";
+import personal3 from "@/public/images/personal/myphoto3.jpeg";
+import personal4 from "@/public/images/personal/myphoto4.jpeg";
+import personal5 from "@/public/images/personal/myphoto5.jpeg";
+import personal6 from "@/public/images/personal/myphoto6.jpeg";
+import personal7 from "@/public/images/personal/myphoto7.jpeg";
+import personal8 from "@/public/images/personal/myphoto8.jpeg";
 
 import html from "@/public/images/skills/html.png";
 import css from "@/public/images/skills/css.png";
@@ -398,12 +405,18 @@ export const projects: Project[] = [
 ];
 
 export const images = {
-  myphoto1: myphoto1,
-  myphoto2: myphoto2,
-  myphoto3: myphoto3,
+  myphoto: myphoto,
   snoppy: snoppy,
-  brand1: brand1,
-  brand2: brand2,
-  pokemonModel: "/models/pokemon_firered_-_players_room/scene.gltf",
-  roomModel: "/models/isometric_rec_room/scene.gltf",
+  brand: brand,
 };
+
+export const personalPhotos = [
+  personal1,
+  personal2,
+  personal3,
+  personal4,
+  personal5,
+  personal6,
+  personal7,
+  personal8,
+];
