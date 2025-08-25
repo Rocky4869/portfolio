@@ -43,8 +43,8 @@ export default function PhotoAlbum() {
   };
 
   return (
-    <motion.div className="relative">
-      <div className="w-[400px] h-[500px] lg:w-[450px] lg:h-[550px] xl:w-[500px] xl:h-[600px] rounded-xl overflow-hidden shadow-2xl">
+    <motion.div>
+      <div className="w-[400px] h-[450px] lg:w-[450px] xl:w-[500px] rounded-xl overflow-hidden shadow-2xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPhotoIndex}
@@ -58,7 +58,7 @@ export default function PhotoAlbum() {
               src={personalPhotos[currentPhotoIndex]}
               alt={`Photo ${currentPhotoIndex + 1}`}
               fill
-              className="object-cover"
+              className="object-cover rounded-xl"
             />
           </motion.div>
         </AnimatePresence>
