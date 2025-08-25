@@ -7,7 +7,7 @@ import { slideInFromTop } from "@/lib/motion";
 
 export default function Qualification() {
   return (
-    <section id="qualification" className="pt-20 pb-60">
+    <section id="qualification" className="pt-20 pb-10 sm:pb-20 md:pb-40">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-8">

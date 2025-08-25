@@ -7,7 +7,7 @@ import { slideInFromLeft, slideInFromTop } from "@/lib/motion";
 
 export default function About() {
   return (
-    <section id="about" className="pt-20 pb-60">
+    <section id="about" className="pt-20 pb-10 sm:pb-20 md:pb-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-32">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-8">
